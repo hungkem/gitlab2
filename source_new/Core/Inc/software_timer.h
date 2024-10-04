@@ -1,17 +1,23 @@
 /*
- * software_timer.h
+ * Timer.h
  *
- *  Created on: Sep 23, 2024
+ *  Created on: Sep 26, 2024
  *      Author: PC
  */
 
-#ifndef INC_SOFTWARE_TIMER_H_
-#define INC_SOFTWARE_TIMER_H_
-#define max 10
-#define tick 10
-extern int timer_flag[max];
-void set_timer(int index, int duration);
-int is_time_expired(int index);
-void timer_run();
+#ifndef INC_TIMER_H_
+#define INC_TIMER_H_
+#define MAX_TIMER	4
 
-#endif /* INC_SOFTWARE_TIMER_H_ */
+extern int TIMER_CYCLE;
+
+extern int Timer_Counter[MAX_TIMER];
+extern int Timer_Flag[MAX_TIMER];
+
+void setTimer(int index, int duration);
+
+void runTimer(void);
+
+
+
+#endif /* INC_TIMER_H_ */
